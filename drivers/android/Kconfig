@@ -54,9 +54,16 @@ config ANDROID_BINDER_IPC_SELFTEST
 	  exhaustively with combinations of various buffer sizes and
 	  alignments.
 
+<<<<<<< HEAD
 config ANDROID_SPOOF_KERNEL_VERSION_FOR_BPF
 	bool "Spoof kernel version for bpfloader"
 	default y
+=======
+config ANDROID_SIMPLE_LMK
+	bool "Simple Android Low Memory Killer"
+	depends on !ANDROID_LOW_MEMORY_KILLER && !MEMCG && !PSI
+	select HAVE_LOW_MEMORY_KILLER
+>>>>>>> fbfcddec04b9 (simple_lmk: Kconfig: Select HAVE_LOW_MEMORY_KILLER)
 	---help---
 	  Spoofs the kernel version for bpfloader/netbpfload to allow
 	  booting newer Android versions without system-side patches.
